@@ -19,7 +19,7 @@ export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
   busyService.busy();
 
   return next(req).pipe(
-    delay(1500),
+    delay(1000),
     tap((response) => {
       cache.set(req.url, response)
     }),
